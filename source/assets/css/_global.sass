@@ -1,0 +1,56 @@
+body
+  background: #151415
+  font-family: $font-sans
+  color: white
+  font-size: $font-size-base
+
+  @include show-on($screen-break)
+    background: url(../img/img-bg-2.jpg) #151415 no-repeat bottom right fixed
+
+  @include show-on(1500px)
+    background: url(../img/img-bg.jpg) #151415 no-repeat bottom right fixed
+p
+  line-height: 2
+
+h1, h2, h3, h4
+  font-family: $font-serif
+  color: $brand-primary
+
+h2
+  font-weight: normal
+  margin: 30px 0
+
+a
+  color: $brand-primary
+  text-decoration: none
+  transition: color 0.1s
+  cursor: pointer
+
+  &:hover
+    color: lighten($brand-primary, 10%)
+
+hr
+  margin: $mobile-padding 0
+  border: none
+  border-bottom: 1px solid $border-color
+
+  @include show-on($screen-break)
+    margin: $desktop-padding 0
+
+.break-xs
+  display: block
+
+  @include show-on($screen-break)
+    display: inline
+
+ul
+  &.list-unstyled
+    list-style: none
+    padding: 0
+
+  &.list-inline
+    list-style: none
+    padding: 0
+
+    li
+      display: inline-block

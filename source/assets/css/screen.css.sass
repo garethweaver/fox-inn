@@ -1,0 +1,56 @@
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
+@import 'https://fonts.googleapis.com/css?family=Playfair+Display:400,900|Roboto'
+@import 'normalize'
+@import 'mixins'
+
+@import 'variables'
+@import 'global'
+
+.page-wrap
+  max-width: 700px
+  padding: $mobile-padding 30px 0
+  text-align: center
+  margin: 0 auto
+
+  @include show-on($screen-break)
+    padding: $desktop-padding 60px
+
+.full-wrap
+  padding: $mobile-padding 30px 0
+  text-align: center
+  margin: 0 auto
+
+  @include show-on($screen-break)
+    padding: $desktop-padding 60px
+
+h1
+  position: relative
+  font-size: 50px
+  margin: 0 auto
+  line-height: 1
+  font-weight: 900
+
+  span
+    display: block
+    font-size: $font-size-small
+    font-family: $font-sans
+    color: white
+    position: relative
+    left: -40px
+    bottom: -10px
+
+  @include show-on($screen-break)
+    font-size: $font-size-hero
+
+    span
+      font-size: $font-size-large
+      left: -90px
+      bottom: -20px
+
+@import 'hours'
+@import 'meta'
+@import 'menus'
+@import 'footer'
+@import 'instagram_feed'
+@import 'notice'
+@import 'xmas'

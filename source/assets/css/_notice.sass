@@ -1,0 +1,66 @@
+body.has-notice
+  overflow: hidden
+
+.notice-wrap
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  background: rgba(black, 0.5)
+  overflow-y: auto
+  z-index: 100
+
+  @include show-on($screen-break)
+    display: flex
+    align-items: center
+    justify-content: center
+
+  .notice
+    margin: auto
+    padding: 20px
+    text-align: center
+
+  img
+    display: block
+    max-width: 400px
+    width: 100%
+    margin: 0 auto 2px
+
+  .notice-close
+    display: block
+    color: white
+    background: $brand-primary
+    padding: 20px
+    font-size: $font-size-large
+
+    &:hover
+      background: lighten($brand-primary, 10%)
+
+    .fa
+      margin-left: 10px
+
+.animate-hide-slide-up-in-out
+  &.ng-hide-remove
+    transition: 0.4s all
+    opacity: 0
+    transform: translateY(30px)
+  &.ng-hide-remove.ng-hide-remove-active
+    opacity: 1
+    transform: translateX(0)
+  &.ng-hide-add
+    transition: 0.4s all
+  &.ng-hide-add.ng-hide-add-active
+    opacity: 0
+    transform: translateY(-30px)
+
+.animate-hide-fade-in-out
+  &.ng-hide-remove
+    transition: 0.4s all
+    opacity: 0
+  &.ng-hide-remove.ng-hide-remove-active
+    opacity: 1
+  &.ng-hide-add
+    transition: 0.4s all
+  &.ng-hide-add.ng-hide-add-active
+    opacity: 0

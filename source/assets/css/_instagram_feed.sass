@@ -1,0 +1,96 @@
+.instagram-feed
+  .fa-refresh
+    font-size: 60px
+
+  ul
+    @extend %clearfix
+
+    list-style: none
+    margin: 0
+    padding: 0
+
+  li
+    float: left
+    width: 100%
+
+    @include show-on(500px)
+      width: 50%
+
+    @include show-on(800px)
+      width: 33.3333%
+
+    @include show-on(1000px)
+      width: 20%
+
+  a
+    display: block
+    position: relative
+    height: 0
+    padding-top: 100%
+
+  img
+    display: block
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+    transition: opacity 0.4s
+    z-index: 2
+
+    &:hover
+      opacity: 0.6
+
+  .indicator
+    position: absolute
+    top: 50%
+    left: 50%
+    font-size: 30px
+    transform: translate(-50%, -50%)
+    color: white
+
+  .fa-exclamation-triangle
+    display: none
+
+  .errored
+    .fa-instagram
+      display: none
+
+    .fa-exclamation-triangle
+      display: block
+
+  .unloaded
+    .indicator
+      animation: blink 0.8s ease infinite alternate
+      z-index: 1
+
+    img
+      opacity: 0
+
+  // .insta-link
+  //   background: $brand-primary
+  //   color: white
+
+  //   .text
+  //     color: white
+  //     position: absolute
+  //     top: 50%
+  //     left: 0%
+  //     right: 0
+  //     transform: translateY(-50%)
+  //     text-align: center
+
+  //   .fa
+  //     font-size: 30px
+  //     margin-bottom: 10px
+
+  .error
+    margin-bottom: 20px
+    font-style: italic
+
+@include keyframes(blink)
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+

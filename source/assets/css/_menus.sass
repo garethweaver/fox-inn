@@ -1,0 +1,32 @@
+.menus
+  margin: $desktop-padding 0
+
+  li
+    margin: 15px 0
+
+  a
+    display: inline-block
+    position: relative
+
+  span
+    position: absolute
+    bottom: 20px
+    left: 0
+    right: 0
+    font-size: 11px
+    background: $brand-primary
+    color: white
+    padding: 4px
+
+  .menu-img
+    max-width: 150px
+
+  @include show-on($screen-break)
+    margin: $desktop-padding*2 0
+
+    li
+      margin: 0 15px 0 0
+      display: inline-block
+
+      &:last-child
+        margin-right: 0

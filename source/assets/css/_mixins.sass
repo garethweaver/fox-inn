@@ -1,0 +1,25 @@
+@mixin show-on($media)
+  @media only screen and (min-width:$media)
+    @content
+
+@mixin keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+
+  @-moz-keyframes #{$name}
+    @content
+
+  @keyframes #{$name}
+    @content
+
+%clearfix
+  *zoom: 1
+
+  &:before,
+  &:after
+    display: table
+    content: ""
+    line-height: 0
+
+  &:after
+    clear: both

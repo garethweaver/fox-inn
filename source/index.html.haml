@@ -1,0 +1,96 @@
+.page-wrap
+  %h1
+    %span the
+    fox inn
+
+  %hr
+
+  %ul.list-unstyled.meta
+    %li
+      %span.fa.fa-fw.fa-phone
+      01403 822386
+    %li
+      %span.fa.fa-fw.fa-map-marker
+      Bucks Green, Horsham, <span class="break-xs">RH12 3JP, England</span>
+    %li
+      %a{ href: '//www.google.co.uk/maps/place/The+Fox+Inn/@51.0861832,-0.4675445,14z/data=!4m5!1m2!2m1!1sThe+Fox+Inn!3m1!1s0x0000000000000000:0x45e178388b775989', target: '_blank' }
+        %span.fa.fa-fw.fa-location-arrow
+        View on maps
+    %li
+      %a{ href: '//instagram.com/fox_inn', target: '_blank' }
+        %span.fa.fa-fw.fa-instagram
+        Follow us
+
+  %p Set in the West Sussex countryside between Horsham and Guilford The Fox Inn is a picturesque pub rich in history. We serve a mix of traditional English pub fare alongside Chinese dishes, best washed down with our great Dorset ale. As our food is freshly cooked the standard menus are subject to change without notice and should be taken with a pinch of salt&hellip;
+
+  %section.hours
+    %h2 Kitchen Hours
+    %table
+      %tr
+        %td Mon-Thu
+        %td 12.00-15.00 &amp; 18.00-21.30
+      %tr
+        %td Fri
+        %td 12.00-15.00 &amp; 17.00-21.30
+      %tr
+        %td Sat
+        %td 12.00-21.30
+      %tr
+        %td Sun
+        %td 12.00-19.30
+
+
+  %div{ 'ng-controller': 'MenuController' }
+    .span.fa.fa-spin.fa-refresh.no-animate{ 'ng-hide': 'isLoaded' }
+    .error{ 'ng-if': 'error' } Error fetching images from instagram...
+    .no-animate{ 'ng-show': 'isLoaded' }
+
+      %section.menus{ 'ng-if': 'getSpecialMenus().length > 0'}
+        %h2 {{filterBy}} Menus
+        %ul.list-unstyled
+          %li{ 'ng-repeat': 'menu in getSpecialMenus()'}
+            %a{ 'ng-href': '{{menu.url}}', target: '_blank' }
+              %img.menu-img{ 'ng-if': 'menu.image_url', 'ng-src': '{{menu.image_url}}' }
+              %img.menu-img{ 'ng-if': '!menu.image_url', 'ng-src': 'http://placehold.it/150x220' }
+              %span {{menu.title}}
+              %img.holly-top{ src: '/assets/img/holly-top.png', 'ng-if': '$first' }
+              %img.holly-bottom{ src: '/assets/img/holly-bottom.png', 'ng-if': '$last' }
+
+      %section.menus{ 'ng-if': 'getDefaultMenus().length > 0'}
+        %h2 Sample Menus
+        %ul.list-unstyled
+          %li{ 'ng-repeat': 'menu in getDefaultMenus()'}
+            %a{ 'ng-href': '{{menu.url}}', target: '_blank' }
+              %img.menu-img{ 'ng-if': 'menu.image_url', 'ng-src': '{{menu.image_url}}' }
+              %img.menu-img{ 'ng-if': '!menu.image_url', 'ng-src': 'http://placehold.it/150x220' }
+              %span {{menu.title}}
+
+.full-wrap
+  .instagram-feed{ 'ng-controller': 'InstagramController' }
+    .span.fa.fa-spin.fa-refresh.no-animate{ 'ng-hide': 'isLoaded' }
+    .error{ 'ng-if': 'error' } Error fetching images from instagram...
+    %ul.no-animate{ 'ng-show': 'isLoaded' }
+      %li{ 'ng-repeat': 'image in images'}
+        %a.unloaded{ 'ng-href': '{{image.link}}', lazyload: '' }
+          %img{ 'ng-src': '{{image.images.standard_resolution.url}}' }
+          %span.indicator.fa.fa-instagram
+          %span.indicator.fa.fa-exclamation-triangle
+      -#
+        %li
+          %a.insta-link{ href: '//instagram.com/fox_inn', target: '_blank' }
+            %span.text
+              %span.fa.fa-thumbs-o-up
+              <br> Follow us
+
+.page-wrap
+  %footer
+    &copy; The Fox Inn - Bucks Green, Horsham, RH12 3JP, England
+    %br
+    Web work from <a href="http://www.garethweaver.com">Gareth Weaver</a>.
+
+.notice-wrap.animate-hide-fade-in-out{ 'ng-cloak': '', 'ng-show': 'notice' }
+  .notice.animate-hide-slide-up-in-out{ 'ng-show': 'notice' }
+    %img{ 'ng-src': '/assets/notice/notice.jpg', 'ng-if': 'noticeLoaded' }
+    %a.notice-close{ 'ng-click': 'hideNotice()' }
+      Continue
+      %span.fa.fa-arrow-right

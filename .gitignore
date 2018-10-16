@@ -1,0 +1,8 @@
+.bundle
+.cache
+.DS_Store
+.sass-cache
+build/
+source/php/php-instagram/access-token.php
+source/php/php-instagram/cache
+source/php/php-menus/cache
