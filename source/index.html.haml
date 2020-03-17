@@ -56,8 +56,8 @@
               %img.menu-img{ 'ng-if': 'menu.image_url', 'ng-src': '{{menu.image_url}}' }
               %img.menu-img{ 'ng-if': '!menu.image_url', 'ng-src': 'http://placehold.it/150x220' }
               %span {{menu.title}}
-              %img.holly-top{ src: '/assets/img/holly-top.png', 'ng-if': '$first' }
-              %img.holly-bottom{ src: '/assets/img/holly-bottom.png', 'ng-if': '$last' }
+              / %img.holly-top{ src: '/assets/img/holly-top.png', 'ng-if': '$first' }
+              / %img.holly-bottom{ src: '/assets/img/holly-bottom.png', 'ng-if': '$last' }
 
       %section.menus{ 'ng-if': 'getDefaultMenus().length > 0'}
         %h2 Sample Menus

@@ -35,7 +35,7 @@ angular.module 'app', ['ngAnimate']
 .controller 'MenuController', ['$scope', '$http', ($scope, $http) ->
 
   $scope.menus = []
-  $scope.filterBy = 'Christmas'
+  $scope.filterBy = 'Delivery'
 
   # $http.get('/php/php-menus/cache/menus.json').then (response) ->
   $http.get('/php/php-menus/menus.php').then (response) ->
