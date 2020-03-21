@@ -1,0 +1,50 @@
+.page-wrap.delivery-banner-spacer
+  padding-top: $mobile-padding + 30px
+
+  @include show-on($screen-break)
+    padding-top: $desktop-padding + 30px
+
+.delivery-banner
+  color: rgba(black, 0.9)
+  font-weight: bold
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1
+  background: $brand-secondary
+  text-align: center
+  padding: 10px 30px
+  text-align: center
+  font-family: $font-serif
+  border: none
+  width: 100%
+  transition: background-color 0.1s
+
+  &:hover
+    background: lighten($brand-secondary, 10%)
+
+  &-helper
+    font-family: $font-sans
+
+  .fa
+    margin-left: 3px
+
+  @include show-on($screen-break)
+    padding: 15px 60px
+    font-size: $font-size-large
+
+.delivery-button
+  margin-top: 10px
+  background: none
+  border: 1px solid rgba($brand-secondary, 0.7)
+  border-radius: 4px
+  padding: 5px 15px
+  color: $brand-secondary
+  transition: all 0.1s
+
+  .fa
+    margin: 0 5px 10px 0 !important
+
+  &:hover
+    border-color: $brand-secondary
+    color: lighten($brand-secondary, 10%)

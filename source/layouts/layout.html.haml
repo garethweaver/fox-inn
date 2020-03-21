@@ -25,3 +25,4 @@
 
   %body{ 'ng-controller': 'NoticeController', 'ng-class': '{"has-notice": notice }' }
     = yield
+    = javascript_include_tag 'https://www.fbgcdn.com/embedder/js/ewm2.js', defer: true, async: true
