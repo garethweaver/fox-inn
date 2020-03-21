@@ -49,5 +49,6 @@ set :images_dir, 'assets/img'
 
 configure :build do
   activate :minify_css
+  activate :asset_hash, :exts => %w(.css .js)
 #   activate :minify_javascript
 end
