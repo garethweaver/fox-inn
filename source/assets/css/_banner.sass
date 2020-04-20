@@ -1,12 +1,11 @@
 .page-wrap.delivery-banner-spacer
-  padding-top: $mobile-padding + 30px
+  padding-top: $mobile-padding + 70px
 
   @include show-on($screen-break)
     padding-top: $desktop-padding + 30px
 
 .delivery-banner
   color: rgba(black, 0.9)
-  font-weight: bold
   position: fixed
   top: 0
   left: 0
@@ -18,26 +17,37 @@
   font-family: $font-serif
   border: none
   width: 100%
-  transition: background-color 0.1s
-
-  &:hover
-    background: lighten($brand-secondary, 10%)
+  box-sizing: border-box
+  line-height: 1.7
 
   &-helper
     font-family: $font-sans
 
-  .fa
-    margin-left: 3px
+  button
+    background: lighten($brand-secondary, 10%)
+    border: none
+    font-family: $font-sans
+    padding: 5px 10px
+    display: inline-block
+    border-radius: 4px
+    transition: background-color 0.1s
+    text-transform: uppercase
+    font-size: $font-size-small
+    font-weight: bold
+
+    &:hover
+      background: lighten($brand-secondary, 20%)
+
 
   @include show-on($screen-break)
     padding: 15px 60px
-    font-size: $font-size-large
 
 .delivery-button
   margin-top: 10px
   background: none
   border: 1px solid rgba($brand-secondary, 0.7)
   border-radius: 4px
+  min-width: 200px
   padding: 5px 15px
   color: $brand-secondary
   transition: all 0.1s
