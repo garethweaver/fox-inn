@@ -17,3 +17,11 @@
     .fa
       display: inline-block
       margin: 0
+
+  &#{&}-buttons
+    @include show-on($screen-break)
+      display: flex
+      justify-content: center
+
+      li
+        margin: 10px

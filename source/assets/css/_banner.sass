@@ -23,7 +23,9 @@
   &-helper
     font-family: $font-sans
 
-  button
+  button,
+  a
+    color: rgba(black, 0.9)
     background: lighten($brand-secondary, 10%)
     border: none
     font-family: $font-sans
@@ -43,6 +45,8 @@
     padding: 15px 60px
 
 .delivery-button
+  box-sizing: border-box
+  display: inline-block
   margin-top: 10px
   background: none
   border: 1px solid rgba($brand-secondary, 0.7)
